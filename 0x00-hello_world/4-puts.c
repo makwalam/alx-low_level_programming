@@ -1,7 +1,6 @@
 #include <stdio.h>
 /**
- * main - A program that print a line with put functio
-n
+ * main - A program that print a line with put function
  *Return: 0 (Success)
  */
 int main(void)
