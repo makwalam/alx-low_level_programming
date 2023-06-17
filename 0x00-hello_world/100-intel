@@ -1,6 +1,13 @@
 #!/bin/bash
 
-CFILE="main.c"
-OUTPUT_FILE="${CFILE%.c}.s"
+# Read the C file name from the environment variable CFILE
+c_file=$CFILE
 
-gcc -S -masm=intel "$CFILE" -o "$OUTPUT_FILE"
+# Create the output file name by replacing the extension with .s
+output_file="${c_file%.c}.s"
+
+# Generate the assembly code using GCC with the -S flag
+gcc -S -masm=intel "$c_file" -o "$output_file"
+
+# Print the name of the output file
+echo "Generated assembly code: $output_file"
