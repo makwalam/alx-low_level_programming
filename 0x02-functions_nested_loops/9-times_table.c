@@ -1,48 +1,38 @@
 #include "main.h"
 
-void times_table(void); /* Function prototype */
-
 /**
- * main - Entry point
- *
- * Return: Always 0
- */
-int main(void)
-{
-	times_table();
-	return (0);
-}
-
-/**
- * times_table - Prints the 9 times table
+ * times_table - Prints the 9 times table.
  */
 void times_table(void)
 {
-	int i, j, result;
+	int row, column, result;
 
-	for (i = 0; i <= 9; i++)
+	for (row = 0; row <= 9; row++)
 	{
-		for (j = 0; j <= 9; j++)
+		_putchar('0'); /* Print the first column */
+		_putchar(',');
+
+		for (column = 1; column <= 9; column++)
 		{
-			result = i * j;
+			_putchar(' ');
 
-			if (j == 0)
-				_putchar('0');
-			else if (result < 10)
-				_putchar(' ');
-			else
-				_putchar((result / 10) + '0');
+			result = row * column;
 
-			_putchar((result % 10) + '0');
-
-			if (j != 9)
+			if (result >= 10)
 			{
-				_putchar(',');
-				_putchar(' ');
+				_putchar('0' + (result / 10));
+				_putchar('0' + (result % 10));
 			}
+			else
+			{
+				_putchar(' ');
+				_putchar('0' + result);
+			}
+
+			if (column < 9)
+				_putchar(',');
 		}
 
 		_putchar('\n');
 	}
 }
-
