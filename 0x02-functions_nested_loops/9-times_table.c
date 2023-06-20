@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * times_table - prints the 9 times table
+ * times_table - Prints the 9 times table
  */
 void times_table(void)
 {
@@ -9,22 +9,27 @@ void times_table(void)
 
 	for (i = 0; i <= 9; i++)
 	{
-		_putchar('0'); /* Print the first column (0) */
-
-		for (j = 1; j <= 9; j++)
+		for (j = 0; j <= 9; j++)
 		{
-			_putchar(',');
-			_putchar(' ');
-
 			result = i * j;
 
-			if (result < 10)
-				_putchar(' '); /* Extra space for single-digit numbers */
+			if (j == 0)
+				_putchar('0'); /* Print the first zero of each row */
+			else if (result < 10)
+				_putchar(' '); /* Print a space before single-digit numbers */
+			else
+				_putchar((result / 10) + '0'); /* Print the tens digit */
 
-			_putchar('0' + result);
+			_putchar((result % 10) + '0'); /* Print the ones digit */
+
+			if (j != 9)
+			{
+				_putchar(','); /* Print the comma separator */
+				_putchar(' '); /* Print a space after each number */
+			}
 		}
 
-		_putchar('\n');
+		_putchar('\n'); /* Move to the next line after each row */
 	}
 }
 
