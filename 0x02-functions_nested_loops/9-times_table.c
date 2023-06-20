@@ -1,5 +1,18 @@
 #include "main.h"
 
+void times_table(void); /* Function prototype */
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0
+ */
+int main(void)
+{
+	times_table();
+	return (0);
+}
+
 /**
  * times_table - Prints the 9 times table
  */
@@ -14,22 +27,22 @@ void times_table(void)
 			result = i * j;
 
 			if (j == 0)
-				_putchar('0'); /* Print the first zero of each row */
+				_putchar('0');
 			else if (result < 10)
-				_putchar(' '); /* Print a space before single-digit numbers */
+				_putchar(' ');
 			else
-				_putchar((result / 10) + '0'); /* Print the tens digit */
+				_putchar((result / 10) + '0');
 
-			_putchar((result % 10) + '0'); /* Print the ones digit */
+			_putchar((result % 10) + '0');
 
 			if (j != 9)
 			{
-				_putchar(','); /* Print the comma separator */
-				_putchar(' '); /* Print a space after each number */
+				_putchar(',');
+				_putchar(' ');
 			}
 		}
 
-		_putchar('\n'); /* Move to the next line after each row */
+		_putchar('\n');
 	}
 }
 
