@@ -1,8 +1,14 @@
+/**
+ * _abs - Computes the absolute value of an integer.
+ * @num: The number to compute the absolute value of.
+ *
+ * Return: The absolute value of the input number.
+ */
 int _abs(int num)
 {
 	if (num < 0)
-		return -num;
+		return (-num);
 	else
-		return num;
+		return (num);
 }
 
