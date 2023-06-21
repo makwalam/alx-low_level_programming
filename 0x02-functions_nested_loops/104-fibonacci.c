@@ -34,5 +34,6 @@ int main(void)
 {
 	print_fibonacci(98);
 
-	return 0;
+	return (0);
 }
+
