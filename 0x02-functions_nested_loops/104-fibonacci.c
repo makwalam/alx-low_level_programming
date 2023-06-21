@@ -6,14 +6,14 @@
  */
 void print_fibonacci(int n)
 {
-	unsigned long long num1 = 1, num2 = 2, next, count;
+	int num1 = 1, num2 = 2, next, count;
 
-	printf("%llu, %llu, ", num1, num2);
+	printf("%d, %d, ", num1, num2);
 
 	for (count = 3; count <= n; count++)
 	{
 		next = num1 + num2;
-		printf("%llu", next);
+		printf("%d", next);
 
 		if (count != n)
 			printf(", ");
@@ -34,6 +34,6 @@ int main(void)
 {
 	print_fibonacci(98);
 
-	return 0;
+	return (0);
 }
 
