@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#define MAX_TERMS 98
+
 /**
  * main - Entry point of the program
  *
@@ -9,21 +11,22 @@
  */
 int main(void)
 {
-	unsigned long int num1 = 1, num2 = 2, next;
+	unsigned long int fib[MAX_TERMS];
 	int i;
 
-	printf("%lu, %lu", num1, num2);
+	fib[0] = 1;
+	fib[1] = 2;
 
-	for (i = 3; i <= 98; i++)
+	printf("%lu, %lu", fib[0], fib[1]);
+
+	for (i = 2; i < MAX_TERMS; i++)
 	{
-		next = num1 + num2;
-		printf(", %lu", next);
-		num1 = num2;
-		num2 = next;
+		fib[i] = fib[i - 1] + fib[i - 2];
+		printf(", %lu", fib[i]);
 	}
 
 	printf("\n");
 
-	return (0);
+	return 0;
 }
 
