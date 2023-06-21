@@ -1,32 +1,31 @@
 #include <stdio.h>
 
-#define MAX_TERMS 98
-
 /**
  * main - Entry point of the program
  *
  * Description: Finds and prints the first 98 Fibonacci numbers
+ *              without using external libraries or long long
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	unsigned long int fib[MAX_TERMS];
-	int i;
+    int i;
+    unsigned int fib1 = 1, fib2 = 2, fib3;
 
-	fib[0] = 1;
-	fib[1] = 2;
+    printf("%u, %u", fib1, fib2);
 
-	printf("%lu, %lu", fib[0], fib[1]);
+    for (i = 2; i < 98; i++)
+    {
+        fib3 = fib1 + fib2;
+        printf(", %u", fib3);
 
-	for (i = 2; i < MAX_TERMS; i++)
-	{
-		fib[i] = fib[i - 1] + fib[i - 2];
-		printf(", %lu", fib[i]);
-	}
+        fib1 = fib2;
+        fib2 = fib3;
+    }
 
-	printf("\n");
+    printf("\n");
 
-	return 0;
+    return (0);
 }
 
