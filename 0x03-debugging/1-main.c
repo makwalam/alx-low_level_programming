@@ -1,10 +1,9 @@
 #include <stdio.h>
-
 /**
- * main - Causes an infinite loop
- *
- * Return: Always 0
+ * main - causes an infinite loop
+ * Return: 0
  */
+
 int main(void)
 {
 	int i;
@@ -16,8 +15,7 @@ int main(void)
 	while (i < 10)
 	{
 		putchar(i);
-		/* Commenting out the increment line to fix the infinite loop */
-		/* i++; */
+		i++; // Commented out to cause the infinite loop
 	}
 
 	printf("Infinite loop avoided! \\o/\n");
