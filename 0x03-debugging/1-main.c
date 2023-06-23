@@ -16,7 +16,7 @@ int main(void)
 	while (i < 10)
 	{
 		putchar(i);
-		/* Commenting out the line below to avoid infinite loop */
+		/* Commenting out the increment line to fix the infinite loop */
 		/* i++; */
 	}
 
@@ -24,4 +24,3 @@ int main(void)
 
 	return (0);
 }
-
