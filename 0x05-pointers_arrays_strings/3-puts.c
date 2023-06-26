@@ -1,9 +1,8 @@
-#include "unistd.h"
-
+#include "main.h"
 /**
  * _puts - Prints a string, followed by a new line, to stdowt
  * 
- * @str: The string to be printed.
+ * @str: string to print
  */
 void _puts(char *str)
 {
