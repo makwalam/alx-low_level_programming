@@ -1,15 +1,19 @@
 #include "main.h"
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * puts2 - Prints every other character of a string.
+ * @str: The input string.
  */
-int main(void)
+void puts2(char *str)
 {
-    char str[] = "Lorem ipsum...";  // Modify the string declaration
+	int i = 0;
 
-    puts2(str);
-    return (0);
+	while (str[i] != '\0')
+	{
+		_putchar(str[i]);
+		i += 2;
+	}
+
+	_putchar('\n');
 }
 
