@@ -1,3 +1,6 @@
+#include "main.h"
+#include <stdio.h>
+
 /**
  * _atoi - Converts a string to an integer
  * @s: The string to convert
@@ -35,6 +38,6 @@ int _atoi(char *s)
 	/* Apply the sign to the result */
 	result *= sign;
 
-	return result;
+	return (result);
 }
 
