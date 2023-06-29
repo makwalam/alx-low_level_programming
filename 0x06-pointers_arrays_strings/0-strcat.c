@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * _strncat - Concatenates two strings.
  * @dest: The destination string.
