@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
  * _strncat - Concatenates two strings.
  * @dest: The destination string.
@@ -17,7 +15,10 @@ char *_strncat(char *dest, char *src, int n)
 		dest_len++;
 
 	for (i = 0; i < n && src[i] != '\0'; i++)
-		dest[dest_len++] = src[i];
+	{
+		dest[dest_len] = src[i];
+		dest_len++;
+	}
 
 	dest[dest_len] = '\0';
 
