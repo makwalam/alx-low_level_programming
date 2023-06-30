@@ -16,7 +16,7 @@ char *leet(char *str)
 	char leetChars[] = "4433007711";
 
 	if (leetStr == NULL)
-		return NULL;
+		return (NULL);
 
 	/* Copy the original string while encoding characters */
 	for (i = 0; str[i] != '\0'; i++)
@@ -40,6 +40,6 @@ char *leet(char *str)
 	ptr[i] = '\0';
 
 	free(leetStr);
-	return str;
+	return (str);
 }
 
