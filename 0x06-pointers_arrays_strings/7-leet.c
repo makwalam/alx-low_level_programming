@@ -3,29 +3,36 @@
 char *leet(char *str)
 {
     char *ptr = str;
-    char *leet_str = malloc(sizeof(char) * 1337);  // Assuming the maximum length of the resulting string is 1337
-
+    char *leetStr = malloc(sizeof(char) * 100); // Assuming the encoded string won't exceed 100 characters
     int i, j;
-    char leet_chars[] = {'4', '3', '0', '7', '1'};
-    char original_chars[] = {'a', 'e', 'o', 't', 'l'};
+    char leetLetters[] = "aAeEoOtTlL";
+    char leetChars[] = "4433007711";
 
+    if (leetStr == NULL)
+        return NULL;
+
+    // Copy the original string while encoding characters
     for (i = 0; str[i] != '\0'; i++)
     {
-        for (j = 0; j < 5; j++)
+        for (j = 0; leetLetters[j] != '\0'; j++)
         {
-            if (str[i] == original_chars[j] || str[i] == (original_chars[j] - 'a' + 'A'))
+            if (str[i] == leetLetters[j])
             {
-                leet_str[i] = leet_chars[j];
+                leetStr[i] = leetChars[j];
                 break;
             }
         }
-        if (j == 5)
-        {
-            leet_str[i] = str[i];
-        }
+        if (leetLetters[j] == '\0')
+            leetStr[i] = str[i];
     }
+    leetStr[i] = '\0';
 
-    leet_str[i] = '\0';
-    return leet_str;
+    // Copy the encoded string back to the original string
+    for (i = 0; leetStr[i] != '\0'; i++)
+        ptr[i] = leetStr[i];
+    ptr[i] = '\0';
+
+    free(leetStr);
+    return str;
 }
 
